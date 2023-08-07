@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewData["Title"] = "First";
+}
+
+<h1>First</h1>
+
+
+
+<body>
+    <button id="btn1" class="btn-dark">按我</button>
+    <h3 class="alert alert-info" id="div1"></h3>
+</body>
+
+
+@section Scripts{
+<script>
+        //const btn = document.querySelector('#btn1');
+//        const myDiv = document.querySelector('div1');
+//        btn.addEventListener('click',() =>{
+//        myDiv.innerHTML = 'Success !'
+        
+//        })
+        const myDiv = document.querySelector('#div1');
+        const btn = document.querySelector('#btn1');
+        const r = new XMLHttpRequest();
+        btn.addEventListener('click', () => {
+        r.open('GET','/api/index')
+        r.send();
+        })
+        r.addEventListener('load',()=>{
+        const data  = r.responseText;
+         myDiv.innerHTML = `<p>${data}</p>`
+                  })
+</script>
+
+
+
+}

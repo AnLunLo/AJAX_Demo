@@ -1,0 +1,72 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<table id="emTable">
+    <thead>
+        <tr>
+            <th>姓名</th>
+            <th>年資</th>
+            <th>薪水</th>
+        </tr>
+    </thead>
+    <tbody> </tbody>
+
+
+
+</table>
+
+@section CSS
+{
+    <style>.display-4{background-color:yellow}</style>
+
+}
+
+
+@section Scripts
+{
+    <script>
+        $('.display-4').on('mouseover',function () {
+                $(this).css('color', 'blue')
+        }).on('mouseout', function () {
+            $(this).css('color', 'black')
+        })
+
+
+        const emp = {
+            "employees": [
+                { "name": "Tom", "workYears": 3, "salary": 35000 },
+                { "name": "Jack", "workYears": 5, "salary": 40000 },
+                { "name": "Mary", "workYears": 7, "salary": 45000 }
+            ]
+        };
+
+        const datas = emp.employees.map(em =>{
+        const {name,workYears,salary} = em
+        return(
+        `
+        <tr>
+             <td>${name}</td>
+             <td>${workYears}</td>
+             <td>${salary}</td>
+        </tr>
+        `
+        )  
+        })
+        document.querySelector('#emTable > tbody').innerHTML = datas.join("")
+
+
+
+    </script>  
+
+
+
+
+
+
+}

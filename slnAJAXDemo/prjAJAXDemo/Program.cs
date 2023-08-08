@@ -1,8 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using prjAJAXDemo.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddDbContext<DemoContext>(
+    options => options.UseSqlServer(builder.Configuration.GetConnectionString("DemoConnection"))
+    );
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

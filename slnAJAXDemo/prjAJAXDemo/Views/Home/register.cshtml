@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewData["Title"] = "register";
+}
+
+<h1>會員註冊</h1>
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        @*<form action="~/api/getdemo" method="post"> *@
+        <form id="form1">
+            @*這邊表示要把資料送給誰，使用action屬性來決定，方法使用method屬性，不特別標明則使用GET方法*@
+        <div class="mb-3">
+            <label for="userName" class="form-label">使用者名稱</label> @*for的意思是當游標點擊這邊的時候，會自動跑去id為userName的地方*@
+            <input type="text" class="form-control"id="userName" name="name"/>
+        </div>
+         <div class="mb-3">
+             <label for="userAge" class="form-label">年齡</label> @*for的意思是當游標點擊這邊的時候，會自動跑去id為userName的地方*@
+                <input type="text" class="form-control" id="userAge" name="age" />
+         </div>
+            <div class="mb-3">
+                <label for="userEmail" class="form-label">你的EMAIL</label>
+                <input type="email" class="form-control" id="userEmail" name="Email">
+            </div>
+            <div class="mb-3">
+                <label for="photo" class="form-label">照片</label>
+                <input type="file" class="form-control" id="photo" name="file">
+            </div>
+        <button type="submit" id="btn1" class="btn btn-primary">送出</button>
+        </form>
+        <div class="alert alert-info" id="div1"></div>
+    </div>
+</div>
+<div class="col-3">
+    <a href="https://zh-tw.facebook.com/" id="a1">超連結</a>
+
+</div>
+
+@section CSS{
+    
+
+}
+
+@section Scripts{
+
+    <script>
+        const btn = document.querySelector('#btn1')
+        const a1 = document.querySelector('#a1')
+        //const txtusername = document.querySelector('#userName')
+        //const txtage = document.querySelector('#userAge')
+        const div1 = document.querySelector('#div1')
+
+        btn.addEventListener('click', event => { //event這邊可以帶換成其他詞，可以自定義
+            event.preventDefault();//防止submit的預設行為
+           
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', '/api/Register');
+            //xhr.setRequestHeader('Content-Type','appliction/x-www-form-urlencoded')
+            //xhr.send(`name=${txtusername.value}&age=${txtage.value}`);
+            const formData = new FormData(document.querySelector('#form1'))
+            xhr.send(formData);
+
+            xhr.addEventListener('load', () => {
+            const data = xhr.responseText;
+             div1.innerHTML = data;
+            })
+        })
+
+        a1.addEventListener('click', event => {//超連結部分
+            if (!window.confirm("真的要去嗎??")) {
+                event.preventDefault();
+            }
+        })
+
+    </script>
+
+}

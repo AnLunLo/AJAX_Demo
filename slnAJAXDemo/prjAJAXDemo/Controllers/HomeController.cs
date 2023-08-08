@@ -23,6 +23,10 @@ namespace prjAJAXDemo.Controllers
             return View();
         }
 
+        public IActionResult register()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();

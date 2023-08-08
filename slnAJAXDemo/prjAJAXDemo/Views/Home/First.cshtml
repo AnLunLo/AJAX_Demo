@@ -5,14 +5,24 @@
 
 <h1>First</h1>
 
+@section CSS{
+    <style>
+        #loading{
+        display:none
+        }
+    </style>
+}
+
 
 
 <body>
     <button id="btn1" class="btn-dark">按我</button>
+    <button id="btnCancel" class="btn-danger">取消</button>
+    <img src="~/images/Walk.gif" id="loading"/>
     <h3 class="alert alert-info" id="div1"></h3>
 </body>
 
-
+@*https://localhost:7093/home/first*@
 @section Scripts{
 <script>
         //const btn = document.querySelector('#btn1');
@@ -23,14 +33,49 @@
 //        })
         const myDiv = document.querySelector('#div1');
         const btn = document.querySelector('#btn1');
+        const btnCancel = document.querySelector('#btnCancel');
+        const loadingImg = document.querySelector('#loading')
+
+        //步驟一
         const r = new XMLHttpRequest();
+
+        r.addEventListener('loadstart', () => {
+            btn.setAttribute('disabled', 'disabled');
+            btn.textContent = "執行中...";
+            loadingImg.style.display = "inline";
+            myDiv.innerHTML += `<h3>AJAX開始</h3>`;
+        });
+
+        r.addEventListener('loadend', () => {
+            btn.removeAttribute('disabled'); // 移除disabled屬性
+            btn.textContent = "點我";
+            loadingImg.style.display = "none";
+            myDiv.innerHTML += `<h3>AJAX結束</h3>`;
+        });
+
+        r.addEventListener('timeout', () => {
+            myDiv.innerHTML += `<h3>伺服器過時，請稍後再試</h3>`;
+        });
+
+        r.addEventListener('abort', () => {
+            myDiv.innerHTML += `<h3>已取消</h3>`;
+        });
+
+        btnCancel.addEventListener('click', () => {
+            r.abort();
+        })
+
+
+        //步驟二: 發出請求
         btn.addEventListener('click', () => {
         r.open('GET','/api/index')
+        r.timeout = 3000;
         r.send();
         })
+        //步驟三: 接收伺服器回傳資料
         r.addEventListener('load',()=>{
         const data  = r.responseText;
-         myDiv.innerHTML = `<p>${data}</p>`
+         myDiv.innerHTML += `<p>${data}</p>`
                   })
 </script>
 

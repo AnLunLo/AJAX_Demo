@@ -68,7 +68,9 @@
 
         //步驟二: 發出請求
         btn.addEventListener('click', () => {
-        r.open('GET','/api/index')
+        //r.open('GET','~/api/index')
+        //r.open('POST', '@Url.Action("index","api")'); //寫法1
+        r.open('POST', '@Url.Content("/api/index")'); //寫法2
         r.timeout = 3000;
         r.send();
         })

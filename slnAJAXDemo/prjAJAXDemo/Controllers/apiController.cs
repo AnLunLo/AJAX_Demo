@@ -12,8 +12,8 @@ namespace prjAJAXDemo.Controllers
 
         public apiController(DemoContext context, IWebHostEnvironment host)
         { 
-            this._context = context;
-            this._host = host;
+            _context = context;
+            _host = host;
 
         }
         public IActionResult Index()
@@ -21,12 +21,6 @@ namespace prjAJAXDemo.Controllers
             System.Threading.Thread.Sleep(5000);
             return Content("Hello AJAX"); 
         }
-
-        public IActionResult Travel() 
-        {
-        return View();
-        }
-
 
         //public IActionResult GetDemo(string name, int age)
         public IActionResult GetDemo(UserVM user)
@@ -66,7 +60,45 @@ namespace prjAJAXDemo.Controllers
 
         }
 
+        public IActionResult GetImageByte(int id = 1)
+        {
+            Members? member = _context.Members.Find(id);
+            byte[]? img = member.FileData;
+            return File(img, "image/jpeg");
 
+        }
+
+
+
+
+
+        //=========================
+        public IActionResult Cities()
+        {
+            var cities = _context.Address.Select(c => c.City).Distinct();
+            //var cities = _context.Address.Select(c => new
+            //{
+            //    c.City
+            //}).Distinct();
+            return Json(cities);
+        }
+
+
+
+
+
+        public IActionResult Districts(string city)
+        {
+            var districts = _context.Address.Where(a => a.City == city).Select(c => c.SiteId).Distinct();
+            return Json(districts);
+        }
+
+
+        public IActionResult Roads(string siteId)
+        {
+            var roads = _context.Address.Where(a => a.SiteId == siteId).Select(c => c.Road).Distinct();
+            return Json(roads);
+        }
 
 
     }

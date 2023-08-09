@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "JhC7w8Uj6pNEYCxWy4gFEVH6Ut+kWOV8T13i2itupPY=",
+  "Hash": "E3mJK+7UPn8nIUGLsM6T0YyxzR7erpQRX+B9K4NajZA=",
   "Source": "prjAJAXDemo",
   "BasePath": "_content/prjAJAXDemo",
   "Mode": "Default",
@@ -1120,6 +1120,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\logo.png"
+    },
+    {
+      "Identity": "C:\\CSharp\\AJAX\\AJAX_Demo\\slnAJAXDemo\\prjAJAXDemo\\wwwroot\\uploads\\p1.jpg",
+      "SourceId": "prjAJAXDemo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\CSharp\\AJAX\\AJAX_Demo\\slnAJAXDemo\\prjAJAXDemo\\wwwroot\\",
+      "BasePath": "_content/prjAJAXDemo",
+      "RelativePath": "uploads/p1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\p1.jpg"
+    },
+    {
+      "Identity": "C:\\CSharp\\AJAX\\AJAX_Demo\\slnAJAXDemo\\prjAJAXDemo\\wwwroot\\uploads\\pixelCat_1_1.png",
+      "SourceId": "prjAJAXDemo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\CSharp\\AJAX\\AJAX_Demo\\slnAJAXDemo\\prjAJAXDemo\\wwwroot\\",
+      "BasePath": "_content/prjAJAXDemo",
+      "RelativePath": "uploads/pixelCat_1_1.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\pixelCat_1_1.png"
     }
   ]
 }

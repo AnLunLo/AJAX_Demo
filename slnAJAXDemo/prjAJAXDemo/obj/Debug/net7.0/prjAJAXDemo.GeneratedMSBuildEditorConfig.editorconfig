@@ -20,6 +20,14 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcYXBpXFRyYXZlbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/CSharp/AJAX/AJAX_Demo/slnAJAXDemo/prjAJAXDemo/Views/Home/Adrress.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZHJyZXNzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/CSharp/AJAX/AJAX_Demo/slnAJAXDemo/prjAJAXDemo/Views/Home/Fetch.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGZXRjaC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/CSharp/AJAX/AJAX_Demo/slnAJAXDemo/prjAJAXDemo/Views/Home/First.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGaXJzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -30,6 +38,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/CSharp/AJAX/AJAX_Demo/slnAJAXDemo/prjAJAXDemo/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/CSharp/AJAX/AJAX_Demo/slnAJAXDemo/prjAJAXDemo/Views/Home/Promise.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcm9taXNlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/CSharp/AJAX/AJAX_Demo/slnAJAXDemo/prjAJAXDemo/Views/Home/register.cshtml]

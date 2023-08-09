@@ -257,6 +257,14 @@
       "PackagePath": "staticwebassets\\uploads\\logo.png"
     },
     {
+      "Id": "C:\\CSharp\\AJAX\\AJAX_Demo\\slnAJAXDemo\\prjAJAXDemo\\wwwroot\\uploads\\p1.jpg",
+      "PackagePath": "staticwebassets\\uploads\\p1.jpg"
+    },
+    {
+      "Id": "C:\\CSharp\\AJAX\\AJAX_Demo\\slnAJAXDemo\\prjAJAXDemo\\wwwroot\\uploads\\pixelCat_1_1.png",
+      "PackagePath": "staticwebassets\\uploads\\pixelCat_1_1.png"
+    },
+    {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.prjAJAXDemo.props",
       "PackagePath": "build\\prjAJAXDemo.props"
     },

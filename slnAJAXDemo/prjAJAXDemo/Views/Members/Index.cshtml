@@ -42,12 +42,21 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Age)
             </td>
+
+            <td>
+                <img src ="~/uploads/@item.FileName"class="img-thumbnail"/>@*方法一*@
+            </td>
+            <td>
+                <img src="~/api/GetImageByte/@item.MemberId" class="img-thumbnail" />@*方法二*@
+                <img src="@Url.Action("GetImageByte","api",new{id=item.MemberId})" class="img-thumbnail" />@*方法三*@
+            </td>
+
+
+
             <td>
                 @Html.DisplayFor(modelItem => item.FileName)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FileData)
-            </td>
+            
             <td>
                 <a asp-action="Edit" asp-route-id="@item.MemberId">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.MemberId">Details</a> |

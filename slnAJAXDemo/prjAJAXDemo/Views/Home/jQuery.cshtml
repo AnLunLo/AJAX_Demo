@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewData["Title"] = "jQuery";
+}
+
+<h1>jQuery</h1>
+<button id="buttonGet" class="btn btn-primary">get</button>
+<button id="buttonPost" class="btn btn-secondary">post</button>
+<button id="buttonJson" class="btn btn-success">getJson</button>
+<button id="buttonLoad" class="btn btn-info">load</button>
+<button id="buttonAjax" class="btn btn-warning">ajax</button>
+<button id="buttonCors" class="btn btn-danger">cors</button>
+<div class="alert alert-dark mt-3 w-50" role="alert" id="divAlert">
+
+    <ul id="myUl"></ul>
+
+</div>
+@section Scripts{
+    <script>
+        $('#buttonGet').click(function () {
+            $.get('@Url.Content("~/api/getdemo")',{"name":"Tom","age":30},function(data){
+                //data 就會收到伺服器端回傳的結果
+                $('#divAlert').text(data)
+            })
+       
+        })
+        $('#buttonPost').click(function () {
+            $.post('@Url.Content("~/api/getdemo")', { "name": "Mary", "age": 28 }, function (data) {
+                //data 就會收到伺服器端回傳的結果
+                $('#divAlert').text(data)
+            })
+        })
+        $('#buttonJson').click(function () {
+            $.getJSON('@Url.Content("~/api/Cities")',  function (datas) {
+                //data 就會收到伺服器端回傳的結果
+              //  $('#divAlert').text(data)
+                const myUl = $('#myUl')
+                const docFrag =$(document.createDocumentFragment())//產生一個空容器
+             $.each(datas,function(idx, city){ //避免在迴圈中，使用選擇棄
+                 const item = $(`<li></li>`).text(city)
+                    docFrag.append(item)//append會每跑一次就更新網頁一次，所以要先有一個容器先接著，不要直接更新到網頁上
+             })
+                myUl.html(docFrag) //在jQuery裡面，innerHTML要改成html
+            })
+        })
+        $('#buttonLoad').click(function () {
+            //$('#divAlert').text("LOAD")
+            $('#divAlert').load('@Url.Content("~/Home/MyPartial2")')
+        })
+
+
+        $('#buttonAjax').click(function () {
+            $.ajax({
+                'url': '@Url.Content("~/api/getdemo")',
+                'type': 'get',
+                //'dataType':'json'
+                'data': {"name":"Tom","age":30},
+                })
+                .done(function(data){
+                    $('#divAlert').text(data)
+            })
+        })
+
+
+        $('#buttonCors').click(function () {
+            $.getJSON('https://localhost:7040/api/Shippers', function (datas) { 
+                console.log(datas)
+            })
+        })
+
+    </script>
+}

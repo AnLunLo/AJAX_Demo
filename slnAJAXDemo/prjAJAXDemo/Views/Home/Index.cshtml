@@ -7,7 +7,7 @@
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 
-<table id="emTable">
+<table id="emTable" class="table table-striped">
     <thead>
         <tr>
             <th>姓名</th>
@@ -46,21 +46,15 @@
             ]
         };
 
-        const datas = emp.employees.map(em =>{
-        const {name,workYears,salary} = em
-        return(
-        `
+        const datas = emp.employees.map(em =>`
         <tr>
-             <td>${name}</td>
-             <td>${workYears}</td>
-             <td>${salary}</td>
+             <td>${em.name}</td>
+             <td>${em.workYears}</td>
+             <td>${em.salary}</td>
         </tr>
-        `
-        )  
-        })
-        document.querySelector('#emTable > tbody').innerHTML = datas.join("")
-
-
+        ` );
+        //document.querySelector('#emTable > tbody').innerHTML = datas.join("")
+        $('#emTable > tbody').html(datas.join(''));
 
     </script>  
 

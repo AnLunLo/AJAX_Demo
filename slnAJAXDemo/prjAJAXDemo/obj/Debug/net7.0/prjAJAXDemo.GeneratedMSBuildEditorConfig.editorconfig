@@ -32,8 +32,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGaXJzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/CSharp/AJAX/AJAX_Demo/slnAJAXDemo/prjAJAXDemo/Views/Home/History.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIaXN0b3J5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/CSharp/AJAX/AJAX_Demo/slnAJAXDemo/prjAJAXDemo/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/CSharp/AJAX/AJAX_Demo/slnAJAXDemo/prjAJAXDemo/Views/Home/jQuery.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxqUXVlcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/CSharp/AJAX/AJAX_Demo/slnAJAXDemo/prjAJAXDemo/Views/Home/MyPartial1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNeVBhcnRpYWwxLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/CSharp/AJAX/AJAX_Demo/slnAJAXDemo/prjAJAXDemo/Views/Home/MyPartial2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNeVBhcnRpYWwyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/CSharp/AJAX/AJAX_Demo/slnAJAXDemo/prjAJAXDemo/Views/Home/Privacy.cshtml]

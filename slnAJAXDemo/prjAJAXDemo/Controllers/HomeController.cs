@@ -42,10 +42,33 @@ namespace prjAJAXDemo.Controllers
             return View();
         }
 
+        public IActionResult History()
+        {
+            return View();
+        }
+
+
+        public IActionResult jQuery()
+        {
+            return View();
+        }
+
         public IActionResult Fetch()
         {
             return View();
         }
+
+        public IActionResult MyPartial1()
+        {
+            return PartialView();
+        }
+
+        public IActionResult MyPartial2()
+        {
+            ViewBag.message = "來自partial2的內容";
+            return PartialView();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

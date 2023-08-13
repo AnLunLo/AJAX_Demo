@@ -13,6 +13,7 @@
         <div class="mb-3">
             <label for="userName" class="form-label">使用者名稱</label> @*for的意思是當游標點擊這邊的時候，會自動跑去id為userName的地方*@
             <input type="text" class="form-control"id="userName" name="Name"/>
+                <label id="checklabel" class="form-label"></label>
         </div>
          <div class="mb-3">
              <label for="userAge" class="form-label">年齡</label> @*for的意思是當游標點擊這邊的時候，會自動跑去id為userName的地方*@
@@ -25,6 +26,7 @@
             <div class="mb-3">
                 <label for="photo" class="form-label">照片</label>
                 <input type="file" class="form-control" id="photo" name="file"> 
+                <img id="img">
             </div>
         <button type="submit" id="btn1" class="btn btn-primary">送出</button>
         </form>
@@ -46,10 +48,19 @@
     <script>
         const btn = document.querySelector('#btn1')
         const a1 = document.querySelector('#a1')
+        const userName = document.querySelector('#userName')
         //const txtusername = document.querySelector('#userName')
         //const txtage = document.querySelector('#userAge')
         const div1 = document.querySelector('#div1')
-        
+        const photo = document.querySelector('#photo')
+
+        //作業五 圖片預覽
+        photo.addEventListener('change', function (e) {
+            const file = e.target.files[0]
+            const img = document.querySelector('#img')
+            img.src = URL.createObjectURL(file)
+        })
+
 
         //btn.addEventListener('click', event => { //event這邊可以帶換成其他詞，可以自定義
         //    event.preventDefault();//防止submit的預設行為
@@ -87,9 +98,23 @@
         
         })
 
+        //作業三
+  
 
 
 
+        userName.addEventListener('blur', event =>{
+            var input = $('#userName').val();
+            $.post('@Url.Content("~/api/CheckAccount")', { "name": input }, function (data) {
+                //data 就會收到伺服器端回傳的結果
+                if (data.exists) {
+                    $('#checkLabel').text('');
+                } else {
+                    $('#checkLabel').text('使用者不存在');
+                }
+            })
+        
+        })
 
 
 

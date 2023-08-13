@@ -58,6 +58,12 @@ namespace prjAJAXDemo.Controllers
             return View();
         }
 
+        //作業二
+        public IActionResult Travel()
+        {
+            return View();
+        }
+
         public IActionResult MyPartial1()
         {
             return PartialView();

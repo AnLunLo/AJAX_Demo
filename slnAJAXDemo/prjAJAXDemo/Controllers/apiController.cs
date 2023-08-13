@@ -69,17 +69,20 @@ namespace prjAJAXDemo.Controllers
         }
 
 
-
+        public IActionResult CheckAccount(string name)
+        {
+            Members m = _context.Members.FirstOrDefault(item => item.Name == name);
+            bool exists = m != null;
+            return Json(new { exists });
+        
+        }
 
 
         //=========================
         public IActionResult Cities()
         {
+            
             var cities = _context.Address.Select(c => c.City).Distinct();
-            //var cities = _context.Address.Select(c => new
-            //{
-            //    c.City
-            //}).Distinct();
             return Json(cities);
         }
 

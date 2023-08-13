@@ -5,6 +5,7 @@
 
 <h1>Address</h1>
 <select id="selectCity"></select>
+<select id="mainCity"></select>
 <select id="selectDistrict"></select>
 <select id="selectRoad"></select>
 <div id="div1" class="alert alert-info"> </div>
@@ -20,25 +21,59 @@
     const selDistrict= document.querySelector('#selectDistrict');
     const selRoad = document.querySelector('#selectRoad');
     const myDiv = document.querySelector('#div1');
+   
+   
 
-    function loadCity(){
-        const xhr = new XMLHttpRequest();
-           xhr.open('GET','@Url.Content("/api/Cities/")');
-           xhr.send();
-           xhr.addEventListener('load',()=>{
-           const datas = JSON.parse(xhr.responseText);
-           const cities = datas.map(city =>`<option value='${city}'>${city}</option>`)
-           selCity.innerHTML = cities.join("")
-                loadDistrict()
-            })
-            
-    }
+
+    //function loadCity(){
+    //    const xhr = new XMLHttpRequest();
+    //       xhr.open('GET','@Url.Content("~/api/Cities/")');
+    //       xhr.send();
+    //       xhr.addEventListener('load',()=>{
+    //       const datas = JSON.parse(xhr.responseText);
+    //       const cities = datas.map(city => `<option value='${city}'>${city}</option>`)
+    //       selCity.innerHTML = cities.join("")
+    //            loadDistrict()
+    //        })     
+    //}
+
+
+        //作業六
+    async function loadCityFetch(){
+            const res = await fetch('@Url.Content("~/api/Cities/")')
+            const datas = await res.json()
+            const cities = datas.map(city => `<option value='${city}'>${city}</option>`)
+            selCity.innerHTML = cities.join("")
+            loadDistrict()
+        }
         
-       
+        loadCityFetch()
+            
+        //作業四
+        $(document).ready(function () {
+            const new_cities = ['台北市', '新北市', '台中市', '桃園市', '台南市', '高雄市'];
+
+            function loadNewCities() {
+                const mainCity = $('#mainCity');
+                new_cities.forEach(function (city) {
+                    mainCity.append(`<option value="${city}">${city}</option>`);
+                });
+            }
+
+            loadNewCities();
+        });
+
+
+
+
+
+
+
+
 
         function loadDistrict() {
             const xhr = new XMLHttpRequest();
-            xhr.open('GET', `@Url.Content("/api/districts")?city=${selCity.value}`);
+            xhr.open('GET', `@Url.Content("~/api/districts")?city=${selCity.value}`);
             xhr.send();
             xhr.addEventListener('load', () => {
                 const datas = JSON.parse(xhr.responseText);
@@ -51,7 +86,7 @@
 
         function loadRoad() {
             const xhr = new XMLHttpRequest();
-            xhr.open('GET', `@Url.Content("/api/roads")?siteId=${selDistrict.value}`);
+            xhr.open('GET', `@Url.Content("~/api/roads")?siteId=${selDistrict.value}`);
             xhr.send();
             xhr.addEventListener('load', () => {
                 const datas = JSON.parse(xhr.responseText);
@@ -62,7 +97,7 @@
         }
 
 
-        loadCity()
+        //loadcity()
 
 
 

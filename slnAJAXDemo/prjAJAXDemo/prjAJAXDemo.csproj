@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Views\api\" />
     <Folder Include="wwwroot\uploads\" />
   </ItemGroup>
 

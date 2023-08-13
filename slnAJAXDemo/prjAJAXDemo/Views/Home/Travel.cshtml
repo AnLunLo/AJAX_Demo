@@ -1,0 +1,40 @@
+﻿
+@*作業二*@
+
+@{
+    ViewData["Title"] = "Travel";
+}
+
+<h1>Travel</h1>
+<div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" id="pic" alt="..."> @*圖片*@
+    <div class="card-body">
+        <h5 class="card-title" id="stitle">Card title</h5>@*stitle*@
+        <p class="card-text" id="xbody">Some quick example text to build on the card title and make up the bulk of the card's content.</p>@*xbody*@
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item" id="CAT1">An item</li>@*CAT1*@
+        <li class="list-group-item" id="CAT2">A second item</li>@*CAT2*@
+        <li class="list-group-item" id="address">A third item</li>@*address*@
+    </ul>
+    <div class="card-body">
+        <a href="#" class="card-link">Card link</a>
+        <a href="#" class="card-link">Another link</a>
+    </div>
+</div>
+
+
+@section Scripts{
+
+    <script src="~/datas/travel.js"></script>
+    <script>
+        $('#pic').attr("src", spots.CommonFormat.Section[0].file.img[0].text);
+        $('#stitle').text(spots.CommonFormat.Section[0].stitle)
+        $('#xbody').text(spots.CommonFormat.Section[0].xbody)
+        $('#CAT1').text(spots.CommonFormat.Section[0].CAT1)
+        $('#CAT2').text(spots.CommonFormat.Section[0].CAT2)
+        $('#address').text(spots.CommonFormat.Section[0].address)
+        
+        console.log(spots.CommonFormat.Section[0].file.img[0].text)
+    </script>
+}

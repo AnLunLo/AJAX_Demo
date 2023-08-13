@@ -16,12 +16,12 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\CSharp\AJAX\AJAX_Demo\slnAJAXDemo\prjAJAXDemo
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/CSharp/AJAX/AJAX_Demo/slnAJAXDemo/prjAJAXDemo/Views/api/Travel.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcYXBpXFRyYXZlbC5jc2h0bWw=
+[C:/CSharp/AJAX/AJAX_Demo/slnAJAXDemo/prjAJAXDemo/Views/Home/Address.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZGRyZXNzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/CSharp/AJAX/AJAX_Demo/slnAJAXDemo/prjAJAXDemo/Views/Home/Adrress.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZHJyZXNzLmNzaHRtbA==
+[C:/CSharp/AJAX/AJAX_Demo/slnAJAXDemo/prjAJAXDemo/Views/Home/Citites.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDaXRpdGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/CSharp/AJAX/AJAX_Demo/slnAJAXDemo/prjAJAXDemo/Views/Home/Fetch.cshtml]
@@ -62,6 +62,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/CSharp/AJAX/AJAX_Demo/slnAJAXDemo/prjAJAXDemo/Views/Home/register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxyZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/CSharp/AJAX/AJAX_Demo/slnAJAXDemo/prjAJAXDemo/Views/Home/Travel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUcmF2ZWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/CSharp/AJAX/AJAX_Demo/slnAJAXDemo/prjAJAXDemo/Views/Members/Create.cshtml]
